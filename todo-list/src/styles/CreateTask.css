@@ -1,0 +1,33 @@
+.create-task {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.create-task form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.create-task input {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.create-task button {
+    padding: 0.75rem;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.create-task button:disabled {
+    background: #cccccc;
+}
