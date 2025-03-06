@@ -3,16 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #071836;
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-body {
   background-color: #071836;
-  margin: 0;
-  font-family: Arial, sans-serif;
 }
