@@ -73,9 +73,9 @@ export const getTasks = async (page = 1, limit = 5) => {
   }
 };
 
-export const createTask = async (user_email, title) => {
+export const createTask = async (user_email, title, description) => {
   try {
-    const response = await api.post('/tasks/create', { user_email, title });
+    const response = await api.post('/tasks/create', { user_email, title, description });
     return response.data;
   } catch (error) {
     throw new Error('Error al crear la tarea');

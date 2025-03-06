@@ -4,6 +4,7 @@ import '../styles/CreateTask.css';
 
 const CreateTask = ({ onTaskCreated }) => {
     const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -11,8 +12,9 @@ const CreateTask = ({ onTaskCreated }) => {
         setIsLoading(true);
         try {
             const userEmail = localStorage.getItem('userEmail');
-            await createTask(userEmail, title);
+            await createTask(userEmail, title, description);
             setTitle('');
+            setDescription('');
             onTaskCreated();
         } catch (error) {
             console.error('Error al crear tarea:', error);
@@ -31,6 +33,13 @@ const CreateTask = ({ onTaskCreated }) => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="Título de la tarea"
+                    required
+                />
+                <input
+                    type="text"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Descripción de la tarea"
                     required
                 />
                 <button type="submit" disabled={isLoading}>
